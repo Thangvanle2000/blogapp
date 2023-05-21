@@ -73,10 +73,11 @@ const authSlice = createSlice({
     googleLoginStart: (state, action: PayloadAction<{ token: any }>) => {
       state.loading = true;
     },
-    googleLoginSuccess: (state, action) => {
+    googleLoginSuccess: (state, action: PayloadAction<userType>) => {
       state.loading = false;
       state.currentUser = action.payload;
       state.currentUser.isGetSuccess = true;
+      
     },
     googleLoginFalse: (state) => {
       state.loading = false;

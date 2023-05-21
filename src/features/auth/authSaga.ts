@@ -21,7 +21,7 @@ import {
 
 function* handleLogin(action: any) {
   try {
-    let payload:any;
+    let payload: any;
     if ('tokenId' in action.payload) {
       // Handle Google login payload
       payload = { token: action.payload.tokenId };
@@ -29,7 +29,8 @@ function* handleLogin(action: any) {
       payload = action.payload;
     }
     const res: userType = yield authApi.postUserLogin(payload);
-    yield put(getUser(res));
+    yield put(getUser(res)); // Update the state with the response data
+    console.log(res);
     localStorage.setItem("access_token", res.user.token);
     toast.success("Login Success 🥳", {
       position: "top-center",
@@ -52,7 +53,6 @@ function* handleLogin(action: any) {
     });
   }
 }
-
 function* handleSignUp(action: PayloadAction<signUpType>) {
   try {
     const res: createUser = yield authApi.postSignUP(action.payload);
