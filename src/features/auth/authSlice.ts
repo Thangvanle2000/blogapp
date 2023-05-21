@@ -70,18 +70,7 @@ const authSlice = createSlice({
       state.currentUser = action.payload;
       state.currentUser.isGetSuccess = false;
     },
-    googleLoginStart: (state, action: PayloadAction<{ token: any }>) => {
-      state.loading = true;
-    },
-    googleLoginSuccess: (state, action: PayloadAction<userType>) => {
-      state.loading = false;
-      state.currentUser = action.payload;
-      state.currentUser.isGetSuccess = true;
-      
-    },
-    googleLoginFalse: (state) => {
-      state.loading = false;
-    },
+
   },
 });
 
@@ -94,9 +83,7 @@ export const {
   logoutSuccess,
   loginFalse,
   signUpFalse,
-  googleLoginStart,
-  googleLoginSuccess,
-  googleLoginFalse,
+
 } = authSlice.actions;
 const authReducer = authSlice.reducer;
 export default authReducer;
