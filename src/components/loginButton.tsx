@@ -32,7 +32,7 @@ export default function LoginView(props: LoginViewProps) {
       
      
       <GoogleLogin
-        clientId="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"
+        clientId="887958607385-4iqgaukt31ha3tegjl2unllsji20j645.apps.googleusercontent.com"
         buttonText="Google"
         onSuccess={handleGoogleLogin}
         onFailure={handleGoogleLogin} // You may need to handle failure differently
