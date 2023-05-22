@@ -3,7 +3,7 @@ import { checkToken } from "../Types/checkToken";
 import RateLimit from 'axios-rate-limit';
 
 const axiosInstance = axios.create({
-  baseURL: "https://realword.ducpv.click/",
+  baseURL: "https://realword.ducpv.click/api/",
 });
 
 axiosInstance.interceptors.request.use(
