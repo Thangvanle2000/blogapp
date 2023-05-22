@@ -30,7 +30,6 @@ function* handleLogin(action: any) {
     }
     const res: userType = yield authApi.postUserLogin(payload);
     yield put(getUser(res)); // Update the state with the response data
-    console.log(res);
     localStorage.setItem("access_token", res.user.token);
     toast.success("Login Success 🥳", {
       position: "top-center",
